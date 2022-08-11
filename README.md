@@ -22,8 +22,7 @@ If you find our work useful in your research, please cite:
 
 The semantic segmentation of point clouds is an important part of the environment perception for robots. However, it is difficult to directly adopt the traditional 3-D convolution kernel to extract features from raw 3-D point clouds because of the unstructured property of point clouds. In this article, a spherical interpolated convolution operator is proposed to replace the traditional grid-shaped 3-D convolution operator. In addition, this article analyzes the defect of point cloud interpolation methods based on the distance as the interpolation weight and proposes the self-learned distance–feature density by combining the distance and the feature correlation. The proposed method makes the feature extraction of the spherical interpolated convolution network more rational and effective. The effectiveness of the proposed network is demonstrated on the 3-D semantic segmentation task of point clouds. Experiments show that the proposed method achieves good performance on the ScanNet dataset and Paris-Lille-3D dataset. The comparison experiments with the traditional grid-shaped 3-D convolution operator demonstrated that the newly proposed feature extraction operator improves the accuracy of the network and reduces the parameters of the network. 
 
-
-## Prequisites
+## Prerequisites
     python 2.7.12
     CUDA 10.2
     cuDNN 7.4.1
@@ -36,20 +35,24 @@ Or, you can pull the docker image and run the docker container
 ```
 docker pull miiiino/warehouse:latest
 ```
-
 ## Usage
+
+#### Dataset
+
+Download the ScanNetv2 dataset from [here](http://www.scan-net.org/), and see `scannet/README` for details of preprocessing.
 
 #### Compile Customized TF Operators
 
 Please run
 
-    sh compile.sh 
+```
+sh compile.sh 
+```
 
-#### Datasets
+The script file compiles TF operators included under `tf_ops` .
 
-Download the ScanNetv2 dataset from [here](http://www.scan-net.org/), and see `scannet/README` for details of preprocessing.
+#### Training
 
-### Training
 Please run 
 
 ```
@@ -62,18 +65,19 @@ Noted: It takes about five minutes to load the dataset, please be patient :)
 
 The training results and best model will be saved in `result\log_dir`. Besides, in order to understand the training results clearly, we provide `readLog_sphere.py` to handle the training log  `log_train.txt` .
 
-### Testing
+#### Testing
 
 Please run 
 
-    sh command_test.sh 
+```
+sh command_test.sh 
+```
 
 Please remind to specify the `gpu`, `model`(path to SiConv model), `data_root`, `model_path`(path to pre-trained model for testing), `dump_dir`.
 
 The testing results will be saved in `dump_dir`.
 
-
-### Quantitative results:
+## Quantitative results
 
 ![](doc/RESULTS_ON_SCANNET.png)
 
@@ -81,7 +85,7 @@ The testing results will be saved in `dump_dir`.
 
 Noted: Based on the results of the best validation set, finetune training is carried out on the validation set before the model is evaluated on the test set.
 
-### Acknowledgments
+## Acknowledgments
 
 We thank all the T-cyb reviewers and the following open-source project for the help of the implementations:
 - [PointNet++](https://github.com/charlesq34/pointnet2) (Furthest Points Sampling and TF operators)
