@@ -1,7 +1,7 @@
 **Spherical Interpolated Convolutional Network With Distance–Feature Density for 3-D Semantic Segmentation of Point Clouds (T-cyb 2021)**
 ==============================================================================================================================
 This is the official implementation of SiConv (IEEE Transactions on Cybernetics 2021), an end-to-end spherical interpolated convolutional network for 3-D semantic segmentation of point clouds created by Guangming Wang ,  Yehui Yang , Huixin Zhang, Zhe Liu , and Hesheng Wang.
-![](doc/spherical operator.png)
+![](doc/spherical_operator.png)
 
 ![](doc/density.png)
 
@@ -75,9 +75,9 @@ The testing results will be saved in `dump_dir`.
 
 ### Quantitative results:
 
-![](doc/RESULTS ON SCANNET.png)
+![](doc/RESULTS_ON_SCANNET.png)
 
-![](doc/RESULTS ON PARIS-LILLE-3D.png)
+![](doc/RESULTS_ON_PARIS-LILLE-3D.png)
 
 Noted: Based on the results of the best validation set, finetune training is carried out on the validation set before the model is evaluated on the test set.
 
