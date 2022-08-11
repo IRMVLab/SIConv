@@ -1,0 +1,29 @@
+nohup: ignoring input
+WARNING:tensorflow:From /usr/local/lib/python2.7/dist-packages/tensorflow/python/util/deprecation.py:553: calling conv1d (from tensorflow.python.ops.nn_ops) with data_format=NHWC is deprecated and will be removed in a future version.
+Instructions for updating:
+`NHWC` for data_format is deprecated, use `NWC` instead
+2020-02-02 15:11:21.601111: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2020-02-02 15:11:21.919311: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1432] Found device 0 with properties: 
+name: GeForce RTX 2080 Ti major: 7 minor: 5 memoryClockRate(GHz): 1.545
+pciBusID: 0000:3b:00.0
+totalMemory: 10.73GiB freeMemory: 10.53GiB
+2020-02-02 15:11:21.919366: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1511] Adding visible gpu devices: 0
+2020-02-02 15:11:22.225937: I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-02-02 15:11:22.225991: I tensorflow/core/common_runtime/gpu/gpu_device.cc:988]      0 
+2020-02-02 15:11:22.225999: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 0:   N 
+2020-02-02 15:11:22.226686: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10168 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2080 Ti, pci bus id: 0000:3b:00.0, compute capability: 7.5)
+start loading training data ...
+start loading validation data ...
+start loading whole scene validation data ...
+pid: 27474
+Tensor("Placeholder_3:0", shape=(), dtype=bool, device=/device:GPU:0)
+--- Get model and loss
+--- Get training operator
+**** EPOCH 000 ****
+2020-02-02 15:11:52.400192: E tensorflow/stream_executor/cuda/cuda_driver.cc:981] failed to synchronize the stop event: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+2020-02-02 15:11:52.400223: E tensorflow/stream_executor/cuda/cuda_event.cc:48] Error polling for event status: failed to query event: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+2020-02-02 15:11:52.400483: E tensorflow/stream_executor/cuda/cuda_timer.cc:55] Internal: error destroying CUDA event in context 0x22ee643b0: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+2020-02-02 15:11:52.400501: F tensorflow/core/common_runtime/gpu/gpu_event_mgr.cc:274] Unexpected Event status: 1
+2020-02-02 15:11:52.400521: E tensorflow/stream_executor/cuda/cuda_timer.cc:60] Internal: error destroying CUDA event in context 0x22ee643b0: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+2020-02-02 15:11:52.400572: F tensorflow/stream_executor/cuda/cuda_dnn.cc:231] Check failed: status == CUDNN_STATUS_SUCCESS (7 vs. 0)Failed to set cuDNN stream.
+2020-02-02 15:11:29.010934
